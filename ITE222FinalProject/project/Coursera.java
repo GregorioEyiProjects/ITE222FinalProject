@@ -34,11 +34,11 @@ public class Coursera {
         courses.add(c8);
         courses.add(c9);
         courses.add(c10);
-        creatStudents(c1, c2, courses);
+        createStudents(c1, c2, courses);
     }
 
     
-    private static void creatStudents(Course course, Course course2, List<Course> courses) {
+    private static void createStudents(Course course, Course course2, List<Course> courses) {
 
         //Student creation
         Student student1 = new Student("Gregorio", "gregorio@example.com");
