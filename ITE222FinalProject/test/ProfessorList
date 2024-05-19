@@ -1,0 +1,60 @@
+package ProfessorList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class professor {
+    private String name;
+    private int age;
+    private String specialization;
+
+    public professor(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.specialization = "Information Technology";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void displayProfessorDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Specialization: " + specialization);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        List<professor> professorList = new ArrayList<>();
+
+        // Create 6 professor objects with the specialization in Information Technology
+        professor professor1 = new professor("Lanka", 30);
+        professor professor2 = new professor("Nay", 35);
+        professor professor3 = new professor("Amin", 35);
+        professor professor4 = new professor("Farouz", 48);
+        professor professor5 = new professor("Atikom", 52);
+        professor professor6 = new professor("Thinzar", 31);
+
+        // Add professors to the list
+        professorList.add(professor1);
+        professorList.add(professor2);
+        professorList.add(professor3);
+        professorList.add(professor4);
+        professorList.add(professor5);
+        professorList.add(professor6);
+
+        // Display professor details
+        for (professor professor : professorList) {
+            professor.displayProfessorDetails();
+        }
+    }
+}
