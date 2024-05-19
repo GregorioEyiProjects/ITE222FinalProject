@@ -9,29 +9,6 @@ public class Coursera {
         createCourses();
     }
 
-    private static void creatStudents(Course course, Course course2, List<Course> courses) {
-
-        //Student creation
-        Student student1 = new Student("Gregorio", "gregorio@example.com");
-        Student student2 = new Student("StudentName", "student@example.com");
-
-        //Student enrollment
-        student1.enroll(course);
-        student1.enroll(course2);
-        course.enroll(student1);
-
-        //printing info
-        System.out.println("\n*************************** Students info ***************************");
-        for (Student student : course.enrolledStudents) {
-            student.get_info();
-        }
-
-        //List of available courses
-        System.out.println("\n*************************** List of available courses: ***************************");
-        courses.forEach(c -> c.get_info());
-
-    }
-
     private static void createCourses() {
         Course c1 = new Course("Information Technology Fundamentals", "ITE101", "Lanka", "Description 1", 4);
         Course c2 = new Course("Discrete Mathematics", "ITE102", "Amin", "Description 2", 4);
@@ -58,6 +35,30 @@ public class Coursera {
         courses.add(c9);
         courses.add(c10);
         creatStudents(c1, c2, courses);
+    }
+
+    
+    private static void creatStudents(Course course, Course course2, List<Course> courses) {
+
+        //Student creation
+        Student student1 = new Student("Gregorio", "gregorio@example.com");
+        Student student2 = new Student("StudentName", "student@example.com");
+
+        //Student enrollment
+        student1.enroll(course);
+        student1.enroll(course2);
+        course.enroll(student1);
+
+        //printing info
+        System.out.println("\n*************************** Students info ***************************");
+        for (Student student : course.enrolledStudents) {
+            student.get_info();
+        }
+
+        //List of available courses
+        System.out.println("\n*************************** List of available courses: ***************************");
+        courses.forEach(c -> c.get_info());
+
     }
 
 }
