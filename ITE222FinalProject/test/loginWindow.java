@@ -1,11 +1,11 @@
-package ITE222FinalProject.test;
+package LogIn;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class loginWindow extends JFrame{
+public class loginWindow extends JFrame {
     private static final long serialVersionUID = 1L;
     private JTextField usernameField;
     private JPasswordField passwordField;
@@ -56,8 +56,13 @@ public class loginWindow extends JFrame{
     private boolean authenticate(String username, String password) {
         // Perform authentication logic here (e.g., check against a database, API, etc.)
         // Return true if authentication is successful, false otherwise
-        // This is just a placeholder example
-        return username.equals("admin") && password.equals("password");
+        // Check against the acceptable username/password combinations
+        if ((username.equals("matt") && password.equals("matt"))
+                || (username.equals("gregorio") && password.equals("gregorio"))
+                || (username.equals("marco") && password.equals("marco"))) {
+            return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
