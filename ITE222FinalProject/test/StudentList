@@ -1,0 +1,72 @@
+package StudentList;
+
+public class student {
+    private String name;
+    private int age;
+    private String major;
+    private String gender;
+    private String studentID;
+
+    public student(String name, int age, String gender, String major, String studentID) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.major = major;
+        this.studentID = studentID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getMajor() {
+        return major;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getStudentID() {
+        return studentID;
+    }
+
+    public void displayStudentDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Major: " + major);
+        System.out.println("Gender: " + gender);
+        System.out.println("Student ID: " + studentID);
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Create 10 student objects with the major Information Technology
+        student student1 = new student("Matt Frisvold", 21, "Male", "Information Technology", "123456");
+        student student2 = new student("Gregorio Ngui", 22, "Female", "Information Technology", "234567");
+        student student3 = new student("Marco Marco", 19, "Male", "Information Technology", "345678");
+        student student4 = new student("Sophia Davis", 21, "Female", "Information Technology", "456789");
+        student student5 = new student("Daniel Wilson", 23, "Male", "Information Technology", "567890");
+        student student6 = new student("Olivia Taylor", 20, "Female", "Information Technology", "678901");
+        student student7 = new student("David Anderson", 19, "Male", "Information Technology", "789012");
+        student student8 = new student("Ava Martinez", 22, "Female", "Information Technology", "890123");
+        student student9 = new student("James Moore", 21, "Male", "Information Technology", "901234");
+        student student10 = new student("Emily Thompson", 24, "Female", "Information Technology", "012345");
+
+        // Display student details
+        student1.displayStudentDetails();
+        student2.displayStudentDetails();
+        student3.displayStudentDetails();
+        student4.displayStudentDetails();
+        student5.displayStudentDetails();
+        student6.displayStudentDetails();
+        student7.displayStudentDetails();
+        student8.displayStudentDetails();
+        student9.displayStudentDetails();
+        student10.displayStudentDetails();
+    }
+}
