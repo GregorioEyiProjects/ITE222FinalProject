@@ -1,4 +1,4 @@
-package ITE222FinalProject;
+package ITE222FinalProject.test;
 
 import java.util.ArrayList;
 import java.util.List;

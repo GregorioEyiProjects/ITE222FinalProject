@@ -1,4 +1,4 @@
-package ITE222FinalProject;
+package ITE222FinalProject.test;
 
 public class CourseraTest {
 

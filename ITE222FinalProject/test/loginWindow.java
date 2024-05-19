@@ -1,4 +1,4 @@
-package ITE222FinalProject;
+package ITE222FinalProject.test;
 
 import javax.swing.*;
 import java.awt.*;
