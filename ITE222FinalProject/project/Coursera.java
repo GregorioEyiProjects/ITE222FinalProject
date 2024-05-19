@@ -50,7 +50,7 @@ public class Coursera {
         course.enroll(student1);
 
         //printing info
-        System.out.println("\n*************************** Students info ***************************");
+        System.out.println("\n*************************** Student info ***************************");
         for (Student student : course.enrolledStudents) {
             student.get_info();
         }
