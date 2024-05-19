@@ -47,15 +47,15 @@ public class student {
     public static void main(String[] args) {
         // Create 10 student objects with the major Information Technology
         student student1 = new student("Matt Frisvold", 21, "Male", "Information Technology", "123456");
-        student student2 = new student("Gregorio Ngui", 22, "Female", "Information Technology", "234567");
-        student student3 = new student("Marco Marco", 19, "Male", "Information Technology", "345678");
-        student student4 = new student("Sophia Davis", 21, "Female", "Information Technology", "456789");
-        student student5 = new student("Daniel Wilson", 23, "Male", "Information Technology", "567890");
+        student student2 = new student("Gregorio Ngui", 22, "Male", "Information Technology", "234567");
+        student student3 = new student("Marco Marco", 21, "Male", "Information Technology", "345678");
+        student student4 = new student("Tila Tequila", 21, "Female", "Information Technology", "456789");
+        student student5 = new student("Owen Wilson", 23, "Male", "Information Technology", "567890");
         student student6 = new student("Olivia Taylor", 20, "Female", "Information Technology", "678901");
-        student student7 = new student("David Anderson", 19, "Male", "Information Technology", "789012");
-        student student8 = new student("Ava Martinez", 22, "Female", "Information Technology", "890123");
-        student student9 = new student("James Moore", 21, "Male", "Information Technology", "901234");
-        student student10 = new student("Emily Thompson", 24, "Female", "Information Technology", "012345");
+        student student7 = new student("Jack Black", 19, "Male", "Information Technology", "789012");
+        student student8 = new student("Kate Bekinsale", 22, "Female", "Information Technology", "890123");
+        student student9 = new student("John Jones", 21, "Male", "Information Technology", "901234");
+        student student10 = new student("Jamie Chung", 24, "Female", "Information Technology", "012345");
 
         // Display student details
         student1.displayStudentDetails();
