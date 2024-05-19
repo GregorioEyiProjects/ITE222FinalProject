@@ -43,7 +43,7 @@ public class Coursera {
         Course c8 = new Course("Intro to Data Science", "ITE224", "Farouz", "Description 8", 4);
         Course c9 = new Course("Intro to Internet of Things", "ITE233", "Atikom", "Description 8", 4);
         Course c10 = new Course("Programming I", "ITE221", "Farouz", "Description 10", 4);
-        //the res of the courses here
+        //the rest of the courses here
 
 
         List<Course> courses = new ArrayList<>();
