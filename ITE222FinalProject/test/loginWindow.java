@@ -6,14 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class loginWindow extends JFrame {
-    private static final long serialVersionUID = 1L;
-    private JTextField usernameField;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField usernameField;
     private JPasswordField passwordField;
 
     public loginWindow() {
         setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(300, 150);
+        setSize(350, 150);
         setLocationRelativeTo(null);
 
         // Create components
@@ -22,6 +25,7 @@ public class loginWindow extends JFrame {
         usernameField = new JTextField(20);
         passwordField = new JPasswordField(20);
         JButton loginButton = new JButton("Login");
+        JButton createAccountButton = new JButton("Create Account");
 
         // Create panel
         JPanel panel = new JPanel(new GridLayout(4, 2));
@@ -31,6 +35,8 @@ public class loginWindow extends JFrame {
         panel.add(passwordField);
         panel.add(new JLabel()); // Empty label for spacing
         panel.add(loginButton);
+        panel.add(new JLabel()); // Empty label for spacing
+        panel.add(createAccountButton);
 
         // Add panel to frame
         getContentPane().add(panel);
@@ -51,18 +57,23 @@ public class loginWindow extends JFrame {
                 }
             }
         });
+        
+        //create account button
+        createAccountButton.addActionListener(new ActionListener() {
+        	@Override
+        	public void actionPerformed(ActionEvent e) {
+        		//Handle create account logic
+        		JOptionPane.showMessageDialog(loginWindow.this, "Create Account button clicked!");
+        	}
+        
+        });
     }
 
     private boolean authenticate(String username, String password) {
         // Perform authentication logic here (e.g., check against a database, API, etc.)
         // Return true if authentication is successful, false otherwise
-        // Check against the acceptable username/password combinations
-        if ((username.equals("matt") && password.equals("matt"))
-                || (username.equals("gregorio") && password.equals("gregorio"))
-                || (username.equals("marco") && password.equals("marco"))) {
-            return true;
-        }
-        return false;
+        // This is just a placeholder example
+        return username.equals("admin") && password.equals("password");
     }
 
     public static void main(String[] args) {
