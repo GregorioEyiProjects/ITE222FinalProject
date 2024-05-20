@@ -70,10 +70,21 @@ public class loginWindow extends JFrame {
     }
 
     private boolean authenticate(String username, String password) {
-        // Perform authentication logic here (e.g., check against a database, API, etc.)
+    	// Perform authentication logic here
         // Return true if authentication is successful, false otherwise
-        // This is just a placeholder example
-        return username.equals("admin") && password.equals("password");
+        
+        // Usernames and passwords
+        String[] validUsernames = {"matt", "gregorio", "marco"};
+        String[] validPasswords = {"password", "password", "password"};
+
+        // Check if provided username and password match any of the valid combinations
+        for (int i = 0; i < validUsernames.length; i++) {
+            if (username.equals(validUsernames[i]) && password.equals(validPasswords[i])) {
+                return true; // Authentication successful
+            }
+        }
+        
+        return false; // Authentication failed
     }
 
     public static void main(String[] args) {
