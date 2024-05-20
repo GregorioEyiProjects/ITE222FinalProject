@@ -7,28 +7,31 @@ import java.awt.event.ActionListener;
 
 public class loginWindow extends JFrame {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private JTextField usernameField;
+     * 
+     */
+    private static final long serialVersionUID = 1L;
+    private JTextField usernameField;
     private JPasswordField passwordField;
 
     public loginWindow() {
         setTitle("Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(350, 150);
+        setSize(350, 200);
         setLocationRelativeTo(null);
 
         // Create components
-        JLabel usernameLabel = new JLabel("      Username:");
-        JLabel passwordLabel = new JLabel("      Password:");
+        JLabel bannerLabel = new JLabel("Welcome to Coursera.", SwingConstants.CENTER);
+        JLabel usernameLabel = new JLabel("Username:");
+        JLabel passwordLabel = new JLabel("Password:");
         usernameField = new JTextField(20);
         passwordField = new JPasswordField(20);
         JButton loginButton = new JButton("Login");
         JButton createAccountButton = new JButton("Create Account");
 
         // Create panel
-        JPanel panel = new JPanel(new GridLayout(4, 2));
+        JPanel panel = new JPanel(new GridLayout(5, 2));
+        panel.add(bannerLabel);
+        panel.add(new JLabel()); // Empty label for spacing
         panel.add(usernameLabel);
         panel.add(usernameField);
         panel.add(passwordLabel);
@@ -57,17 +60,17 @@ public class loginWindow extends JFrame {
                 }
             }
         });
-        
-        //create account button
+
+        // Create account button
         createAccountButton.addActionListener(new ActionListener() {
-        	@Override
-        	public void actionPerformed(ActionEvent e) {
-        		//Handle create account logic
-        		JOptionPane.showMessageDialog(loginWindow.this, "Create Account button clicked!");
-        	}
-        
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Handle create account logic
+                JOptionPane.showMessageDialog(loginWindow.this, "Create Account button clicked!");
+            }
         });
     }
+
 
     private boolean authenticate(String username, String password) {
     	// Perform authentication logic here
