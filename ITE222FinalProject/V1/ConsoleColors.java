@@ -1,4 +1,4 @@
-package ITE222FinalProject.project;
+package ITE222FinalProject.V1;
 
 public class ConsoleColors {
     // Reset

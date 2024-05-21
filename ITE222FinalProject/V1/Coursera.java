@@ -1,6 +1,5 @@
-package ITE222FinalProject.project;
+package ITE222FinalProject.V1;
 
-import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -46,7 +45,6 @@ public class Coursera {
 
         createMenu(courses, student);
     }
-
 
     private static void createMenu(List<Course> courses, Student student) {
         Scanner sc = new Scanner(System.in);

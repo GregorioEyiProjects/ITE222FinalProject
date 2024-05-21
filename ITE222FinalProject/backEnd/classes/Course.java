@@ -1,4 +1,4 @@
-package ITE222FinalProject.project;
+package ITE222FinalProject.backEnd.classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,34 @@ public class Course {
     private boolean bought;
     private int weeklyHours;
     private double price;
-    List<Student> enrolledStudents;
+    List<Student> studentsAndCoures;
+
+    private List<Course> listOfCourses = new ArrayList<>();
+
+    public Course() { // default courses
+        Course c1 = new Course("Information Technology Fundamentals", "ITE101", "Lanka", 40, "Introduction to Computers", "", false, 4, 0.0);
+        Course c2 = new Course("Discrete Mathematics", "ITE102", "Amin", 36, "Logic and Problem Solving", "", false, 3, 0.0);
+        Course c3 = new Course("Intro to Data Structures and Algorithms", "ITE103", "Amin", 48, "Data Organization and Manipulation", "", false, 4, 0.0);
+        Course c4 = new Course("Computer Organization", "ITE104", "Amin", 40, "Computer Architecture and Components", "", false, 4, 0.0);
+        Course c5 = new Course("Social and Professional Issues in IT", "ITE210", "Nay", 32, "Ethics and IT in Society", "", false, 3, 0.0);
+        Course c6 = new Course("System Analysis, Design, and Implementation", "ITE321", "Amin", 52, "Software Development Lifecycle", "", false, 5, 0.0);
+        Course c7 = new Course("Web Development I", "ITE120", "Amin", 44, "Building Web Applications", "", false, 4, 0.0);
+        Course c8 = new Course("Intro to Data Science", "ITE224", "Farouz", 48, "Data Analysis and Visualization", "", false, 4, 120.0); // Example with a price
+        Course c9 = new Course("Intro to Internet of Things", "ITE233", "Atikom", 40, "Connecting Devices to the Internet", "", false, 4, 0.0);
+        Course c10 = new Course("Programming I", "ITE221", "Farouz", 48, "Fundamentals of Programming", "", false, 4, 0.0);
+        //the rest of the courses here
+
+        listOfCourses.add(c1);
+        listOfCourses.add(c2);
+        listOfCourses.add(c3);
+        listOfCourses.add(c4);
+        listOfCourses.add(c5);
+        listOfCourses.add(c6);
+        listOfCourses.add(c7);
+        listOfCourses.add(c8);
+        listOfCourses.add(c9);
+        listOfCourses.add(c10);
+    }
 
     public Course(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, boolean bought, int weeklyHours, double price) {
         this.name = name;
@@ -25,11 +52,16 @@ public class Course {
         this.bought = bought;
         this.weeklyHours = weeklyHours;
         this.price = price;
-        this.enrolledStudents = new ArrayList<>();
+        this.studentsAndCoures = new ArrayList<>();
     }
 
-    public void enroll(Student student) {
-        this.enrolledStudents.add(student);
+
+    public List<Course> getListOfCourses() {
+        return listOfCourses;
+    }
+
+    public void studentEnrollCourse(Student student) {
+        this.studentsAndCoures.add(student);
     }
 
     public String getName() {
@@ -105,11 +137,11 @@ public class Course {
     }
 
     public List<Student> getEnrolledStudents() {
-        return enrolledStudents;
+        return studentsAndCoures;
     }
 
     public void setEnrolledStudents(List<Student> enrolledStudents) {
-        this.enrolledStudents = enrolledStudents;
+        this.studentsAndCoures = enrolledStudents;
     }
 
     @Override
@@ -124,7 +156,7 @@ public class Course {
                 "bought='" + bought + "'\n" +
                 "weeklyHours='" + weeklyHours + "'\n" +
                 "price='" + price + "'\n" +
-                "enrolledStudents='" + enrolledStudents + "'\n" +
+                "enrolledStudents='" + studentsAndCoures + "'\n" +
                 "----------------------------";
     }
 

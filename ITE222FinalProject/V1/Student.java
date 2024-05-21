@@ -1,10 +1,9 @@
-package ITE222FinalProject.project;
+package ITE222FinalProject.V1;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
-
     private String username;
     private String DateOfBirth;
     private String email;
@@ -91,7 +90,7 @@ public class Student {
     }
 
     public void get_info3() {
-        System.out.println(ConsoleColors.BLACK_BOLD+ConsoleColors.BLUE_BACKGROUND+ "\nStudent profile");
+        System.out.println(ConsoleColors.BLACK_BOLD+ ConsoleColors.BLUE_BACKGROUND+ "\nStudent profile");
         System.out.println(ConsoleColors.RESET+ "Name: " + getUsername() + "\nEmail: " + getEmail());
         System.out.println("\nYour courses:");
         if (enrolledCourses.isEmpty()){
