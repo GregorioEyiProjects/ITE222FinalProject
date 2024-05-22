@@ -55,6 +55,12 @@ public class RegistrationForm extends JFrame {
             }
         });
 
+        // Increase button size
+        Font buttonFont = registerButton.getFont();
+        Font largeButtonFont = new Font(buttonFont.getName(), buttonFont.getStyle(), buttonFont.getSize() + 5);
+        registerButton.setFont(largeButtonFont);
+
+        
         // Create a new panel for the button
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(registerButton);
