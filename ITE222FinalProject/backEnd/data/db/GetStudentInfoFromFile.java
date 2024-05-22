@@ -1,15 +1,13 @@
 package ITE222FinalProject.backEnd.data.db;
 
-import ITE222FinalProject.backEnd.classes.Student;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class GetStudentInfoFromFile {
@@ -42,13 +40,13 @@ public class GetStudentInfoFromFile {
                 String password = extractPasswordFromJson(studentData);
                 String dateOfBirth = extractDateOFBirthFromJson(studentData);
 
-                //Loading the student info into the hashMap
                 // Generate a unique key for each student
                 String key = "student" + studentCount;
 
                 // Loading the student info into the HashMap with the unique key
                 studentsListLoaded.put(key + "_userName", name);
                 studentsListLoaded.put(key + "_password", password);
+                studentsListLoaded.put(key + "_email", email);
 
                 studentCount++;
 
@@ -60,15 +58,17 @@ public class GetStudentInfoFromFile {
                 System.out.println(studentInfo);*/
             }
 
-            System.out.println("Students from the HashMap");
+           /* System.out.println("Students from the HashMap");
             System.out.println(studentsListLoaded);
-            System.out.println("");
+            System.out.println("");*/
 
         } catch (FileNotFoundException | ParseException | org.json.simple.parser.ParseException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
+
+
 
     private String extractNameFromJson(String jsonString) {
 

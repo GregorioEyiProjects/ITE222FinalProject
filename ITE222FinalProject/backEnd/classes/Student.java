@@ -79,7 +79,7 @@ public class Student {
     public void get_info() {
         System.out.println(ConsoleColors.BLACK_BOLD+ConsoleColors.BLUE_BACKGROUND+ "\nStudent enrolled courses:");
         for (Course course : studentCourses) {
-            System.out.println(ConsoleColors.RESET+course.toString2());
+            System.out.println(ConsoleColors.RESET+course.getCourseInfo());
         }
     }
 

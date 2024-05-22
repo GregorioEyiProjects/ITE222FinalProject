@@ -1,4 +1,5 @@
 
-{"password":"Password","dateOfBirth":"11\/03\/2000","userName":"Matt","email":"mattGmail.com"}
-{"password":"Password","dateOfBirth":"11\/03\/2000","userName":"Marco","email":"marcoGmail.com"}
-{"password":"Password","dateOfBirth":"11\/03\/2000","userName":"Gregorio","email":"gregorioGmail.com"}
+{"password":"password","dateOfBirth":"11\/03\/2000","userName":"Matt","email":"matt@gmail.com"}
+{"password":"password","dateOfBirth":"11\/03\/2000","userName":"Marco","email":"marco@gmail.com"}
+{"password":"pass","dateOfBirth":"11\/03\/2000","userName":"Gregorio","email":"gregorio@gmail.com"}
+{"password":"pass","dateOfBirth":"11\/03\/2000","userName":"userTest","email":"userTest@gmail.com"}

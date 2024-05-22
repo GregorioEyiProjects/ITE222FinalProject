@@ -83,7 +83,8 @@ public class LoginWindow extends JFrame {
 
     private boolean authenticate(String userName, String password) {
 
-        SignInImplementation signIn = new SignInImplementation();
+        //SignInImplementation signIn = new SignInImplementation();
+        SignInImplementation signIn = SignInImplementation.getInstance();
         return signIn.studentAuth(userName, password);  //Returning the result from the back-end.
 
         /*// Usernames and passwords

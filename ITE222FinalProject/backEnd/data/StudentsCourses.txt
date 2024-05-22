@@ -1,0 +1,7 @@
+
+{"courseCode":"ITE221","gmail":"gregorio@gmail.com"}
+{"gmail":"matt@gmail.com","courseCode":"ITE221"}
+{"gmail":"marco@gmail.com","courseCode":"ITE221"}
+{"gmail":"gregorio@gmail.com","courseCode":"ITE321"}
+{"gmail":"matt@gmail.com","courseCode":"ITE321"}
+{"gmail":"gregorio@gmail.com","courseCode":"ITE233"}
