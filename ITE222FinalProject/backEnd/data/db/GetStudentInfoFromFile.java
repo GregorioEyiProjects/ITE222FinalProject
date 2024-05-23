@@ -47,6 +47,7 @@ public class GetStudentInfoFromFile {
                 studentsListLoaded.put(key + "_userName", name);
                 studentsListLoaded.put(key + "_password", password);
                 studentsListLoaded.put(key + "_email", email);
+                studentsListLoaded.put(key + "_dateOfBirth", dateOfBirth);
 
                 studentCount++;
 

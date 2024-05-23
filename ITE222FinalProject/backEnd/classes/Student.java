@@ -11,7 +11,6 @@ public class Student {
     private String email;
     private String password;
 
-    private String courseToken;
     private List<Course> studentCourses;
 
     public Student(String username, String dateOfBirth, String email, String password) {

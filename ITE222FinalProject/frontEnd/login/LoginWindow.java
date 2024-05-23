@@ -2,6 +2,7 @@ package ITE222FinalProject.frontEnd.login;
 
 import ITE222FinalProject.backEnd.SignIn.SignInImplementation;
 import ITE222FinalProject.frontEnd.homePage.HomePage;
+import ITE222FinalProject.frontEnd.registerPage.RegistrationForm;
 
 import javax.swing.*;
 import java.awt.*;
@@ -61,7 +62,7 @@ public class LoginWindow extends JFrame {
                 if (authenticate(username, password)) {
                     JOptionPane.showMessageDialog(LoginWindow.this, "Login successful!");
                     setVisible(false);
-                    HomePage hp = new HomePage();
+                    HomePage hp = new HomePage(username, password);
                     hp.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(LoginWindow.this, "Invalid username or password.");
@@ -74,8 +75,10 @@ public class LoginWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Handle create account logic
-                JOptionPane.showMessageDialog(LoginWindow.this, "Create Account button clicked!");
-                //Navigate to the register JFrame
+                //JOptionPane.showMessageDialog(LoginWindow.this, "Create Account button clicked!");
+                RegistrationForm rf = new RegistrationForm();
+                setVisible(false);
+                rf.setVisible(true);
             }
         });
 

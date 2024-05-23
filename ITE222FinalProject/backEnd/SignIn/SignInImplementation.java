@@ -43,7 +43,6 @@ public class SignInImplementation implements SignIn{
         return instance;
     }
 
-
     @Override
     public boolean studentAuth(String userName, String password) {
 
@@ -143,10 +142,6 @@ public class SignInImplementation implements SignIn{
             }
         }
     }
-
-
-
-
 
     public String getStudentEmail() {
         return studentEmail;

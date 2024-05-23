@@ -16,7 +16,7 @@ public class Course {
 
     private String studentEmail;
 
-    List<Student> studentsAndCoures;
+    List<Student> studentsAndCourses;
 
     private List<Course> listOfCourses = new ArrayList<>();
 
@@ -31,6 +31,8 @@ public class Course {
         Course c8 = new Course("Intro to Data Science", "ITE224", "Farouz", 48, "Data Analysis and Visualization", "", false, 4, 120.0); // Example with a price
         Course c9 = new Course("Intro to Internet of Things", "ITE233", "Atikom", 40, "Connecting Devices to the Internet", "10/09/2010", false, 4, 0.0);
         Course c10 = new Course("Programming I", "ITE221", "Farouz", 48, "Fundamentals of Programming", "20/04/2015", false, 4, 0.0);
+        Course c11 = new Course("Programming II", "ITE222", "Farouz", 48, "Advance Programming", "20/04/2015", false, 4, 0.0);
+
         //the rest of the courses here
 
         listOfCourses.add(c1);
@@ -43,6 +45,7 @@ public class Course {
         listOfCourses.add(c8);
         listOfCourses.add(c9);
         listOfCourses.add(c10);
+        listOfCourses.add(c11);
     }
 
     public Course(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, boolean bought, int weeklyHours, double price) {
@@ -55,7 +58,7 @@ public class Course {
         this.bought = bought;
         this.weeklyHours = weeklyHours;
         this.price = price;
-        this.studentsAndCoures = new ArrayList<>();
+        this.studentsAndCourses = new ArrayList<>();
     }
 
     public Course(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, int weeklyHours, double price) {
@@ -67,7 +70,7 @@ public class Course {
         this.publicationDate = publicationDate;
         this.weeklyHours = weeklyHours;
         this.price = price;
-        this.studentsAndCoures = new ArrayList<>();
+        this.studentsAndCourses = new ArrayList<>();
     }
 
 
@@ -76,7 +79,7 @@ public class Course {
     }
 
     public void studentEnrollCourse(Student student) {
-        this.studentsAndCoures.add(student);
+        this.studentsAndCourses.add(student);
     }
 
     public String getName() {
@@ -161,11 +164,11 @@ public class Course {
     }
 
     public List<Student> getEnrolledStudents() {
-        return studentsAndCoures;
+        return studentsAndCourses;
     }
 
     public void setEnrolledStudents(List<Student> enrolledStudents) {
-        this.studentsAndCoures = enrolledStudents;
+        this.studentsAndCourses = enrolledStudents;
     }
 
     @Override
@@ -180,7 +183,7 @@ public class Course {
                 "bought='" + bought + "'\n" +
                 "weeklyHours='" + weeklyHours + "'\n" +
                 "price='" + price + "'\n" +
-                "enrolledStudents='" + studentsAndCoures + "'\n" +
+                "enrolledStudents='" + studentsAndCourses + "'\n" +
                 "----------------------------";
     }
 
@@ -193,6 +196,30 @@ public class Course {
                 "topic='" + topic + "'\n" +
                 "publicationDate='" + publicationDate + "'\n" +
                 "weeklyHours='" + weeklyHours + "'\n";
+    }
+
+    public String getCourseInfo2() {
+        return "\n---------- Course Info ----------" +"\n"+
+                "name= '" + name + "'\n" +
+                "courseCode= '" + courseCode + "'\n" +
+                "instructor= '" + instructor + "'\n" +
+                "hours=" + hours +"'\n"+
+                "topic='" + topic + "'\n" +
+                "publicationDate='" + publicationDate + "'\n" +
+                "weeklyHours='" + weeklyHours + "'\n"+
+                "price='" + price + "'\n";
+    }
+
+    public String getCourse(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, int weeklyHours, double price) {
+        return "\n---------- Course Info ----------" +"\n"+
+                "name= '" + name + "'\n" +
+                "courseCode= '" + courseCode + "'\n" +
+                "instructor= '" + instructor + "'\n" +
+                "hours=" + hours +"'\n"+
+                "topic='" + topic + "'\n" +
+                "publicationDate='" + publicationDate + "'\n" +
+                "weeklyHours='" + weeklyHours + "'\n"+
+                "price='" + price + "'\n";
     }
 
     public void get_info() {

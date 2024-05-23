@@ -1,14 +1,15 @@
 package ITE222FinalProject.backEnd.data.db;
 
+import ITE222FinalProject.backEnd.signUp.SignUp;
 import org.json.simple.JSONObject;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class StudentFileModification  {//implements SignUp
+public class StudentFileModification {
 
-    public void addStudentToTheFile(){//String userName, String email, String password, String dateOfBirth
+    public void addStudentToTheFile(String userName, String email, String password, String dateOfBirth){
 
         try {
 
@@ -20,10 +21,10 @@ public class StudentFileModification  {//implements SignUp
             FileWriter fw = new FileWriter(absolutePath, true);
 
             JSONObject studentObject = new JSONObject();
-            studentObject.put("userName", "Gregorio");
-            studentObject.put("email", "gregorioGmail.com");
-            studentObject.put("password", "Password");
-            studentObject.put("dateOfBirth", "11/03/2000");
+            studentObject.put("userName", userName);
+            studentObject.put("email", email);
+            studentObject.put("password", password);
+            studentObject.put("dateOfBirth", dateOfBirth);
 
             String jsonString = studentObject.toJSONString();
 
@@ -40,9 +41,4 @@ public class StudentFileModification  {//implements SignUp
         }
     }
 
-/*
-    @Override
-    public void addStudent(String userName, String email, String password, String dateOfBirth) {
-        addStudentToTheFile(userName, email, password, dateOfBirth);
-    }*/
 }

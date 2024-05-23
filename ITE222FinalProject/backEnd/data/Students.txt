@@ -3,3 +3,11 @@
 {"password":"password","dateOfBirth":"11\/03\/2000","userName":"Marco","email":"marco@gmail.com"}
 {"password":"pass","dateOfBirth":"11\/03\/2000","userName":"Gregorio","email":"gregorio@gmail.com"}
 {"password":"pass","dateOfBirth":"11\/03\/2000","userName":"userTest","email":"userTest@gmail.com"}
+{"password":"password","dateOfBirth":"12\/12\/2000","userName":"Tomas","email":"tomas@gmail.co"}
+{"password":"password","dateOfBirth":"12\/12\/2000","userName":"Student","email":"student@gmail.com"}
+{"password":"password","dateOfBirth":"12\/12\/2000","userName":"TestStudent","email":"student@gmail.com"}
+
+{"password":"password","dateOfBirth":"12\/12\/2003","userName":"NewStudent","email":"NewStudent@gmail.com"}
+{"password":"password","dateOfBirth":"12\/12\/1999","userName":"OtherStudent","email":"otherStudent@gmail.com"}
+{"password":"password","dateOfBirth":"12\/12\/1990","userName":"MyStudent","email":"MyStudent@gmail.com"}
+{"password":"password","dateOfBirth":"12\/12\/2003","userName":"MoreStudent","email":"MoreStudent@gmail.com"}

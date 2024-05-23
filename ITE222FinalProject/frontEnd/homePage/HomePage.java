@@ -2,12 +2,15 @@ package ITE222FinalProject.frontEnd.homePage;
 
 import ITE222FinalProject.backEnd.SignIn.SignInImplementation;
 import ITE222FinalProject.backEnd.classes.Course;
+import ITE222FinalProject.backEnd.data.db.GetStudentInfoFromFile;
 import ITE222FinalProject.frontEnd.login.LoginWindow;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomePage extends JFrame {
 
@@ -20,7 +23,12 @@ public class HomePage extends JFrame {
 
     private SignInImplementation signIn = SignInImplementation.getInstance();
 
-    public HomePage() {
+    private String nameComing, passwordComing;
+
+    public HomePage(String studentName, String password) {
+
+        this.nameComing = studentName;
+        this.passwordComing = password;
 
         /*Home page JFrame default setting*/
         setTitle("E-Learning Platform");
@@ -90,33 +98,147 @@ public class HomePage extends JFrame {
         optionList.addListSelectionListener(e -> {
             String selectedOption = optionList.getSelectedValue();
             if (selectedOption != null) {
+
                 //JOptionPane.showMessageDialog(HomePage.this, "Selected option: " + selectedOption);
                 welcomeLabel.setText(selectedOption);
-                if (selectedOption.equals("Logout")){
+
+                if (selectedOption.equals("Logout")) {
                     setVisible(false);
                     infoTextArea.setText("");
                     LoginWindow lw = new LoginWindow();
                     lw.setVisible(true);
+
+                } else if (selectedOption.equals("My Courses")) {
+
+                    //JOptionPane.showMessageDialog(this, "My Courses not implemented yet!");
+                    retrieveStudentCourses();
+
+
+                } else if (selectedOption.equals("Browse Courses")) {
+
+                    //display the courses first before showing the dialog
+                    Course c = new Course();
+                    infoTextArea.setText("");
+                    for (Course course : c.getListOfCourses()) {
+                        infoTextArea.append(course.getCourseInfo2());
+                    }
+
+
+                    String codeCourseChosen = JOptionPane.showInputDialog("Enter the codeCourse you would like to buy");
+                    System.out.println("Option for the course chosen: "+codeCourseChosen);
+
+                    //TO display a single Course
+                    if (codeCourseChosen != null){
+                        for (Course course : c.getListOfCourses()) {
+                            if (course.getCourseCode().equals(codeCourseChosen)) {
+                                infoTextArea.setText("");
+                                infoTextArea.append(c.getCourse(
+                                        course.getName(),
+                                        course.getCourseCode(),
+                                        course.getInstructor(),
+                                        course.getHours(),
+                                        course.getTopic(),
+                                        course.getPublicationDate(),
+                                        course.getWeeklyHours(),
+                                        course.getPrice()
+                                ));
+                                break;
+                            }
+                        }
+
+                        String[] addOrCancelValue = {"Buy", "Cancel"};
+                        int result = JOptionPane.showOptionDialog(
+                                this,
+                                "Would you like to buy the course",
+                                "Add course",
+                                JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE,
+                                null,
+                                addOrCancelValue,
+                                addOrCancelValue[0]);
+
+                        System.out.println("Option result: " + result);
+
+                        if (result == JOptionPane.YES_OPTION) {
+                            System.out.println("Buy");
+                        } else if (result == JOptionPane.NO_OPTION) {
+                            System.out.println("Cancel");
+                        }
+
+                    }else {
+                        System.out.println("Cancel was pressed");
+                    }
+
+
+
+                } else if (selectedOption.equals("View Profile")) {
+
+                    //JOptionPane.showMessageDialog(this, "Profile selected");
+                    infoTextArea.setText(" ");
+
+                    GetStudentInfoFromFile gsiff = new GetStudentInfoFromFile();
+                    gsiff.readStudentFile();
+
+                    HashMap<String, String> studentsInfoComingFromFile = gsiff.getStudentsListLoaded();
+
+                    System.out.println(studentsInfoComingFromFile.size());
+
+                    for (Map.Entry<String, String> entry: studentsInfoComingFromFile.entrySet()){
+
+                        String key = entry.getKey();
+                        String value = entry.getValue();
+
+                        if (key.endsWith("_userName")){
+                            String storedName = value;
+                            String storedEmail = studentsInfoComingFromFile.get(key.replace("_userName", "_email"));
+                            String storedPassword = studentsInfoComingFromFile.get(key.replace("_userName", "_password"));
+                            String storedDateOfBirth = studentsInfoComingFromFile.get(key.replace("_userName", "_dateOfBirth"));
+                            if (nameComing.equals(storedName) && passwordComing.equals(storedPassword)){
+                                displayStudentInfoIntoTextArea(storedName, storedEmail, storedDateOfBirth);
+                                break;
+                            }
+
+                        }
+
+                    }
+
                 }
+
             }
         });
 
+        //
         retrieveStudentCourses();
+    }
+
+    private void displayStudentInfoIntoTextArea(String storedName, String storedEmail, String storedDateOfBirth) {
+        System.out.println("----------------- Student Info ----------------");
+        String output =
+                "Name: " + storedName
+                +"\nEmail: "+ storedEmail
+                +"\nDate of birth: "+ storedDateOfBirth;
+        infoTextArea.setText("");
+        infoTextArea.setText(output);
     }
 
     private void retrieveStudentCourses() {
         boolean authenticated = signIn.isAuthenticated();
-
         if (authenticated) {
             listOfCoursesToPrint = signIn.getStudentCoursesFound();
-            infoTextArea.setText(""); // Clear the existing content
-            for (Course item : listOfCoursesToPrint) {
-                infoTextArea.append(item.getCourseInfo());
+            if (!listOfCoursesToPrint.isEmpty()){
+                infoTextArea.setText("");
+                for (Course item : listOfCoursesToPrint) {
+                    infoTextArea.append(item.getCourseInfo());
+                }
+            }else {
+                infoTextArea.setText("Courses not added yet!");
             }
-        } else {
-            // Handle authentication failure
-            JOptionPane.showMessageDialog(this, "Courses not added yet!");
         }
     }
+
+    public JTextArea getInfoTextArea() {
+        return infoTextArea;
+    }
+
 
 }
