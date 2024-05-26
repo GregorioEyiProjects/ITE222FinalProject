@@ -15,7 +15,7 @@ public class Coursera {
         StudentsFileCreation sf = new StudentsFileCreation();
         StudentFileModification sfm = new StudentFileModification();
         GetStudentInfoFromFile students = new GetStudentInfoFromFile();
-        StudentsCoursesFile scf = new StudentsCoursesFile();
+        //StudentsCoursesFile scf = new StudentsCoursesFile();
         //sf.createStudentFile();
         //sfm.addStudentToTheFile();
         //students.readStudentFile();

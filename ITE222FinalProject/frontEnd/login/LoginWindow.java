@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class LoginWindow extends JFrame {
 
@@ -86,8 +87,8 @@ public class LoginWindow extends JFrame {
 
     private boolean authenticate(String userName, String password) {
 
-        //SignInImplementation signIn = new SignInImplementation();
-        SignInImplementation signIn = SignInImplementation.getInstance();
+        //SignInImplementation signIn = SignInImplementation.getInstance();
+        SignInImplementation signIn = new SignInImplementation();
         return signIn.studentAuth(userName, password);  //Returning the result from the back-end.
 
         /*// Usernames and passwords

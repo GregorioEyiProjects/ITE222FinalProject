@@ -11,28 +11,31 @@ import java.util.Map;
 
 public class SignInImplementation implements SignIn{
 
-    private static SignInImplementation instance;
-
+    //private static SignInImplementation instance;
 
     private HashMap<String, String> studentListComing = new HashMap<>(); // student list coming from the file
     private HashMap<String, String> studentsEmailAndCourses = new HashMap<>(); //Email and courses coming from the file
     private List<Course> listOfCoursesComing = new ArrayList<>(); // List of the default courses
     private List<Course> studentCoursesFound = new ArrayList<>(); // List of the default courses that match with the student
 
+    private List<Course> studentCoursesFound2 = new ArrayList<>(); // List of the default courses that match with the student
+
+
     private String courseCodeStored = "";
 
-    private String studentEmail;
+    private String storedStudentEmail;
 
     private GetStudentInfoFromFile students = new GetStudentInfoFromFile();
+    //private StudentsCoursesFile scf = StudentsCoursesFile.getInstance();
     private StudentsCoursesFile scf = new StudentsCoursesFile();
 
     private boolean isAuthenticated;
-    private SignInImplementation() {// Private constructor to prevent instantiation from other classes
+    public SignInImplementation() {// Private constructor to prevent instantiation from other classes
 
     }
 
     //I created a singleton Object to avoid duplications of this object
-    public static SignInImplementation getInstance() {
+    /*public static SignInImplementation getInstance() {
         if (instance == null) {
             synchronized (SignInImplementation.class) {
                 if (instance == null) {
@@ -41,7 +44,7 @@ public class SignInImplementation implements SignIn{
             }
         }
         return instance;
-    }
+    }*/
 
     @Override
     public boolean studentAuth(String userName, String password) {
@@ -67,9 +70,9 @@ public class SignInImplementation implements SignIn{
 
                 // Compare the stored username and password with the entered values.
                 if (storedUserName.equals(userName) && storedPassword.equals(password)) {
-                    studentEmail = studentListComing.get(key.replace("_userName", "_email"));
-                    System.out.println("Student email who just log in " + studentEmail);
-                    getStudentCoursesFromList(studentEmail);
+                    storedStudentEmail = studentListComing.get(key.replace("_userName", "_email"));
+                    System.out.println("Student email who just log in " + storedStudentEmail);
+                    getStudentCoursesFromList(storedStudentEmail);
                     isAuthenticated = true;
                     return true;
                 }
@@ -77,16 +80,13 @@ public class SignInImplementation implements SignIn{
 
         }
 
-        //Otherwise, return false if the values are not correct.
         return false;
     }
 
     public void getStudentCoursesFromList(String studentEmail){
 
-        scf.getStudentNameAndCourse();
+        scf.readStudentCourseFile();
         studentsEmailAndCourses = scf.getStudentsEmailAndCoursesLoaded();
-
-        //System.out.println(studentsEmailAndCourses);
 
         for (Map.Entry<String, String> entry : studentsEmailAndCourses.entrySet()) {
 
@@ -97,8 +97,7 @@ public class SignInImplementation implements SignIn{
                 System.out.println("\nStudent stored email in ..."+ storedStudentEmail);
                 System.out.println("Student email with registration "+ studentEmail);
                 if (storedStudentEmail.equals(studentEmail)){
-                    String storedCourseCode = studentsEmailAndCourses.get(key.replace("_gmail", "_courseCode"));
-                    courseCodeStored = storedCourseCode;
+                    courseCodeStored = studentsEmailAndCourses.get(key.replace("_gmail", "_courseCode"));
                     System.out.println("CourseCode: "+ courseCodeStored+ "\nEmail: "+ storedStudentEmail+ "\n");
                     createCourse(courseCodeStored);
                 }
@@ -118,7 +117,7 @@ public class SignInImplementation implements SignIn{
 
     }
 
-    private void createCourse(String courseCodeStored) {
+    public void createCourse(String courseCodeStored) {
 
         Course course = new Course();
 
@@ -143,12 +142,43 @@ public class SignInImplementation implements SignIn{
         }
     }
 
-    public String getStudentEmail() {
-        return studentEmail;
+    public void createCourse2(String courseCodeStored) {
+
+        Course course = new Course();
+
+        System.out.println(studentCoursesFound2.size());
+
+        listOfCoursesComing = course.getListOfCourses();
+
+        studentCoursesFound2.clear();
+
+        for (Course item: listOfCoursesComing){
+            if (item.getCourseCode().equals(courseCodeStored)){
+                Course courseFound = new Course( // create a new course
+                        item.getName(),
+                        item.getCourseCode(),
+                        item.getInstructor(),
+                        item.getHours(),
+                        item.getTopic(),
+                        item.getPublicationDate(),
+                        item.getWeeklyHours(),
+                        item.getPrice()
+                );
+                studentCoursesFound2.add(courseFound);
+            }
+        }
+    }
+
+    public String getStoredStudentEmail() {
+        return storedStudentEmail;
     }
 
     public List<Course> getStudentCoursesFound() {
         return studentCoursesFound;
+    }
+
+    public List<Course> getStudentCoursesFound2() {
+        return studentCoursesFound2;
     }
 
     public boolean isAuthenticated() {

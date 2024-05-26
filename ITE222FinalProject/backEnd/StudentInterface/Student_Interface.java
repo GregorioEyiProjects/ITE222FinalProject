@@ -2,7 +2,7 @@ package ITE222FinalProject.backEnd.StudentInterface;
 
 import ITE222FinalProject.backEnd.classes.Course;
 
-public interface Student_Interface {
+public interface Student_Interface { //I am not using this interface for now, so i might delete later
 
     void getCourses();
     Course getCourse(String courseCode);

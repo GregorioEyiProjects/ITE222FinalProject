@@ -1,0 +1,6 @@
+{"password":"pass","dateOfBirth":"11/03/2000","userName":"Gregorio","email":"gregorio@gmail.com"}
+{"password":"password","dateOfBirth":"11/03/2000","userName":"Matt","email":"matt@gmail.com"}
+{"password":"password","dateOfBirth":"11/03/2000","userName":"Marco","email":"marco@gmail.com"}
+{"password":"password","dateOfBirth":"11/03/2000","userName":"TestStudent","email":"testStudent@gmail.com"}
+{"password":"password","dateOfBirth":"11/03/2000","userName":"MoreStudent","email":"moreStudent@gmail.com"}
+{"password":"password","dateOfBirth":"11/03/2000","userName":"NewStudent","email":"newStudent@gmail.com"}

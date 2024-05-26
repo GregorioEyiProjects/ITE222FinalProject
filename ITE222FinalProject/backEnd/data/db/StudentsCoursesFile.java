@@ -13,8 +13,23 @@ import java.util.Scanner;
 
 public class StudentsCoursesFile {
 
+    //private static StudentsCoursesFile instance;
+
     private final HashMap<String, String> studentsEmailAndCoursesLoaded = new HashMap<>();
 
+    //This method allows me to get a single instance of this object since I don't want to create it many times (singleton)
+    /*public static StudentsCoursesFile getInstance() {
+        if (instance == null) {
+            synchronized (StudentsCoursesFile.class) {
+                if (instance == null) {
+                    instance = new StudentsCoursesFile();
+                }
+            }
+        }
+        return instance;
+    }*/
+
+    //Create the file
     public void StudentFileCreation(){
 
         try{
@@ -39,7 +54,8 @@ public class StudentsCoursesFile {
         }
     }
 
-    private void writeCourseIntoStudentCourseFile(){
+    //Write into the file
+    public void writeCourseIntoStudentCourseFile(String email, String password){
 
         try{
 
@@ -52,8 +68,8 @@ public class StudentsCoursesFile {
 
             JSONObject studentCourseObject = new JSONObject();
 
-            studentCourseObject.put("gmail", "gregorio@gmail.com");
-            studentCourseObject.put("courseCode", "ITE221");
+            studentCourseObject.put("gmail", email);
+            studentCourseObject.put("courseCode", password);
 
             String jsonString = studentCourseObject.toJSONString();
 
@@ -69,8 +85,8 @@ public class StudentsCoursesFile {
         }
     }
 
-
-    public void getStudentNameAndCourse(){
+    //Get info from the file
+    public void readStudentCourseFile(){
 
         try{
 
@@ -100,10 +116,6 @@ public class StudentsCoursesFile {
                 studentCount++;
 
             }
-            /*
-            * System.out.println("Students from the HashMap with gmail and courseCode");
-            System.out.println(studentsNameAndCoursesLoaded);
-            System.out.println("");*/
 
         }catch (FileNotFoundException | ParseException | org.json.simple.parser.ParseException e){
             System.out.println("An error occurred.");
@@ -112,6 +124,8 @@ public class StudentsCoursesFile {
 
     }
 
+
+    //Extra methods that allow me to retrieve data from the file
     private String extractGmailFromJson(String studentData) throws ParseException, org.json.simple.parser.ParseException{
 
         if (studentData.isEmpty()) {
@@ -131,9 +145,13 @@ public class StudentsCoursesFile {
         JSONParser parser = new JSONParser();
         JSONObject studentObject = (JSONObject) parser.parse(studentData);
         return (String) studentObject.get("courseCode");
+
     }
 
     public HashMap<String, String> getStudentsEmailAndCoursesLoaded() {
         return studentsEmailAndCoursesLoaded;
     }
+
+
+
 }

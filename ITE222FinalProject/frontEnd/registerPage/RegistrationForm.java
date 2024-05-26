@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class RegistrationForm extends JFrame {
 
@@ -109,7 +110,7 @@ public class RegistrationForm extends JFrame {
         panel.add(textField);
     }
 
-    private void registerUser() {
+    private void registerUser(){
         String name = nameOrUserName.getText();
         String email = emailField.getText();
         String password = new String(passwordField.getPassword());
@@ -135,10 +136,7 @@ public class RegistrationForm extends JFrame {
                 hp.setVisible(true);
             }else {
                 JOptionPane.showMessageDialog(this, "The information provided is not complete");
-
             }
-
-
         }
 
     }
