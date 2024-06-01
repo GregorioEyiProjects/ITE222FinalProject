@@ -17,7 +17,7 @@ public class SignUpImplementation implements SignUp{
     }
 
     private boolean validatingStudentInfo(String userName, String email, String dateOfBirth) {
-        return userName.length() > 4 && email.length() > 10 && dateOfBirth.length() == 10;
+        return userName.length() >= 3 && email.length() > 5 && dateOfBirth.length() >= 5;
     }
 
 }

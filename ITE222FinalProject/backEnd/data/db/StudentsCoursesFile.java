@@ -2,7 +2,6 @@ package ITE222FinalProject.backEnd.data.db;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -13,21 +12,7 @@ import java.util.Scanner;
 
 public class StudentsCoursesFile {
 
-    //private static StudentsCoursesFile instance;
-
     private final HashMap<String, String> studentsEmailAndCoursesLoaded = new HashMap<>();
-
-    //This method allows me to get a single instance of this object since I don't want to create it many times (singleton)
-    /*public static StudentsCoursesFile getInstance() {
-        if (instance == null) {
-            synchronized (StudentsCoursesFile.class) {
-                if (instance == null) {
-                    instance = new StudentsCoursesFile();
-                }
-            }
-        }
-        return instance;
-    }*/
 
     //Create the file
     public void StudentFileCreation(){
@@ -74,10 +59,10 @@ public class StudentsCoursesFile {
             String jsonString = studentCourseObject.toJSONString();
 
             fw.write(System.lineSeparator() + jsonString);
-            System.out.println("Successfully wrote student email and courseCode to JSON file.");
+            //System.out.println("Successfully wrote student email and courseCode to JSON file.");
 
             fw.close();
-            System.out.println("Successfully wrote student email and courseCode to the file.");
+            //System.out.println("Successfully wrote student email and courseCode to the file.");
 
         }catch (IOException e){
             System.out.println("An error occurred.");

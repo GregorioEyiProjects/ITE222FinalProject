@@ -210,6 +210,17 @@ public class Course {
                 "price='" + price + "'\n";
     }
 
+    public String getCourseInfo3(int index) {
+        return "\n---------- Course "+ index +" Info ----------" +"\n"+
+                "name= '" + name + "'\n" +
+                "courseCode= '" + courseCode + "'\n" +
+                "instructor= '" + instructor + "'\n" +
+                "hours=" + hours +"'\n"+
+                "topic='" + topic + "'\n" +
+                "publicationDate='" + publicationDate + "'\n" +
+                "weeklyHours='" + weeklyHours + "'\n";
+    }
+
     public String getCourse(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, int weeklyHours, double price) {
         return "\n---------- Course Info ----------" +"\n"+
                 "name= '" + name + "'\n" +

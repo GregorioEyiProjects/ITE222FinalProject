@@ -1,8 +1,12 @@
-{"password":"pass","dateOfBirth":"11/03/2005","userName":"Gregorio","email":"gregorio@gmail.com"}
-{"password":"password","dateOfBirth":"11/03/2000","userName":"Matt","email":"matt@gmail.com"}
-{"password":"password","dateOfBirth":"11/03/2000","userName":"Marco","email":"marco@gmail.com"}
-{"userName":"MoStudent", "email":"testStudent@gmail.com", "password":"password", "dateOfBirth":"11/03/2000"}
-{"userName":"MoStudent", "email":"moreStudent@gmail.com", "password":"password", "dateOfBirth":"11/03/2000"}
-{"password":"password","dateOfBirth":"11/03/2000","userName":"NewStudent","email":"newStudent@gmail.com"}
-
-{"userName":"Alejandro", "email":"alex@gmail.com", "password":"password", "dateOfBirth":"23/12/1995"}
+{"userName":"Gregorio", "email":"gregorio@gmail.com", "password":"password", "dateOfBirth":"11-03-2005"}
+{"password":"password","dateOfBirth":"11-03-2000","userName":"Matt","email":"matt@gmail.com"}
+{"password":"password","dateOfBirth":"11-03-2000","userName":"Marco","email":"marco@gmail.com"}
+{"userName":"MoStudent", "email":"testStudent@gmail.com", "password":"password", "dateOfBirth":"11-03-2000"}
+{"userName":"MoStudent", "email":"moreStudent@gmail.com", "password":"password", "dateOfBirth":"11-03-2000"}
+{"password":"password","dateOfBirth":"11-03-2000","userName":"NewStudent","email":"newStudent@gmail.com"}
+{"userName":"Alejandro", "email":"alex@gmail.com", "password":"password", "dateOfBirth":"23-12-1995"}
+{"userName":"oliver tshita", "email":"mroliverbmt@gmail.com", "password":"Brch1994", "dateOfBirth":"25-10-1994"}
+{"password":"password","dateOfBirth":"03-03-2000","userName":"arefin","email":"mim@gmail.com"}
+{"userName":"amintheman", "email":"123456123456@123.com", "password":"asdfasdf", "dateOfBirth":"12-12-1999"}
+{"password":"password","dateOfBirth":"12-12-2000","userName":"Admin","email":"admin@gmail.com"}
+{"userName":"anotherStudent", "email":"anotherStudent@gmail.com", "password":"password", "dateOfBirth":"12-12-2000"}

@@ -2,12 +2,10 @@ package ITE222FinalProject.backEnd.data.db;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class GetStudentInfoFromFile {
@@ -48,20 +46,9 @@ public class GetStudentInfoFromFile {
                 studentsListLoaded.put(key + "_password", password);
                 studentsListLoaded.put(key + "_email", email);
                 studentsListLoaded.put(key + "_dateOfBirth", dateOfBirth);
-
                 studentCount++;
 
-               /* String studentInfo = "\n---------- Student ----------\n" +
-                        "name='" + name + "'\n" +
-                        "email='" + email + "\n" +
-                        "Date of birth= '" + dateOfBirth + "'\n" +
-                        "Password= '" + password + "'\n";
-                System.out.println(studentInfo);*/
             }
-
-           /* System.out.println("Students from the HashMap");
-            System.out.println(studentsListLoaded);
-            System.out.println("");*/
 
         } catch (FileNotFoundException | ParseException | org.json.simple.parser.ParseException e) {
             System.out.println("An error occurred.");

@@ -56,7 +56,7 @@ public class SignInImplementation implements SignIn{
 
         //Loading the student list coming from the file
         studentListComing = students.getStudentsListLoaded();
-        System.out.println(studentListComing);
+        //System.out.println(studentListComing);
 
         for (Map.Entry<String, String> entry : studentListComing.entrySet()) {
 
@@ -71,7 +71,7 @@ public class SignInImplementation implements SignIn{
                 // Compare the stored username and password with the entered values.
                 if (storedUserName.equals(userName) && storedPassword.equals(password)) {
                     storedStudentEmail = studentListComing.get(key.replace("_userName", "_email"));
-                    System.out.println("Student email who just log in " + storedStudentEmail);
+                    //System.out.println("Student email who just log in " + storedStudentEmail);
                     getStudentCoursesFromList(storedStudentEmail);
                     isAuthenticated = true;
                     return true;
@@ -94,11 +94,11 @@ public class SignInImplementation implements SignIn{
 
             if (key.endsWith("_gmail")) {
                 String storedStudentEmail = entry.getValue();
-                System.out.println("\nStudent stored email in ..."+ storedStudentEmail);
-                System.out.println("Student email with registration "+ studentEmail);
+                //System.out.println("\nStudent stored email in ..."+ storedStudentEmail);
+                //System.out.println("Student email with registration "+ studentEmail);
                 if (storedStudentEmail.equals(studentEmail)){
                     courseCodeStored = studentsEmailAndCourses.get(key.replace("_gmail", "_courseCode"));
-                    System.out.println("CourseCode: "+ courseCodeStored+ "\nEmail: "+ storedStudentEmail+ "\n");
+                    //System.out.println("CourseCode: "+ courseCodeStored+ "\nEmail: "+ storedStudentEmail+ "\n");
                     createCourse(courseCodeStored);
                 }
             }
@@ -107,7 +107,7 @@ public class SignInImplementation implements SignIn{
 
         //I am loading the courses into this empty list to compare courseCode store and the course code in the list
         if (!courseCodeStored.isEmpty()){
-            System.out.println("\nStudent courses");
+            System.out.println("\nStudent courses found");
             for (Course item: studentCoursesFound){
                 System.out.println(item.getCourseInfo());
             }
@@ -121,7 +121,7 @@ public class SignInImplementation implements SignIn{
 
         Course course = new Course();
 
-        System.out.println(studentCoursesFound.size());
+        //System.out.println(studentCoursesFound.size());
 
         listOfCoursesComing = course.getListOfCourses();
 
@@ -146,7 +146,7 @@ public class SignInImplementation implements SignIn{
 
         Course course = new Course();
 
-        System.out.println(studentCoursesFound2.size());
+        //System.out.println(studentCoursesFound2.size());
 
         listOfCoursesComing = course.getListOfCourses();
 

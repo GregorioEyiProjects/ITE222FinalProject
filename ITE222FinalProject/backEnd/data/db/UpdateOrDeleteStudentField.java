@@ -73,7 +73,7 @@ public class UpdateOrDeleteStudentField {
                     }
 
                     Files.write(Path.of(absolutePath), updatedFileContents.toString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-                    System.out.println("File updated successfully!");
+                    //System.out.println("File updated successfully!");
 
                 }
             }
@@ -113,14 +113,14 @@ public class UpdateOrDeleteStudentField {
 
             } else {
                 theCodeIsNotIside = true;
-                System.out.println("Line to be deleted: " + line);
+                //System.out.println("Line to be deleted: " + line);
             }
         }
 
         if (theCodeIsNotIside){
-            System.out.println("Updated file contents: " + updatedFileContents);
+            //System.out.println("Updated file contents: " + updatedFileContents);
             Files.write(Path.of(absolutePath), updatedFileContents.toString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-            System.out.println("Course deleted successfully!");
+            //System.out.println("Course deleted successfully!");
         }
 
         return theCodeIsNotIside;

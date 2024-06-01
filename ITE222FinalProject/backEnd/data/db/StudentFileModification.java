@@ -1,8 +1,6 @@
 package ITE222FinalProject.backEnd.data.db;
 
-import ITE222FinalProject.backEnd.signUp.SignUp;
 import org.json.simple.JSONObject;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,10 +27,10 @@ public class StudentFileModification {
             String jsonString = studentObject.toJSONString();
 
             fw.write(System.lineSeparator() + jsonString);
-            System.out.println("Successfully wrote student information to JSON file.");
+            //System.out.println("Successfully wrote student information to JSON file.");
 
             fw.close();
-            System.out.println("Successfully wrote to the file.");
+            //System.out.println("Successfully wrote to the file.");
 
 
         }catch (IOException e){
