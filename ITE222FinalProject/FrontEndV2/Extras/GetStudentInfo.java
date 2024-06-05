@@ -1,8 +1,11 @@
 package ITE222FinalProject.FrontEndV2.Extras;
 
 import ITE222FinalProject.backEnd.data.db.GetStudentInfoFromFile;
+import ITE222FinalProject.backEnd.data.db.StudentsCoursesFile;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GetStudentInfo {
@@ -36,6 +39,36 @@ public class GetStudentInfo {
 
         return  " ";//Email not found!
     }
+
+
+    public static List<String> getCourseCode(String email){
+
+        List<String> codes = new ArrayList<>();
+        //read the file to find all the students.
+        StudentsCoursesFile scf = new StudentsCoursesFile();
+        scf.readStudentCourseFile();
+
+        // Load the students found with their courses from the File
+        HashMap<String, String> coursesLoadedFromFile = scf.getStudentsEmailAndCoursesLoaded();
+        for (Map.Entry<String, String> entry : coursesLoadedFromFile.entrySet()) {
+
+            String key = entry.getKey();
+            String keyValue = entry.getValue();
+            //String courseCodeStored = coursesLoadedFromFile.get(key.replace("_gmail", "_courseCode"));
+
+            if (key.endsWith("_gmail")) {
+                if (keyValue.equals(email)){
+                    String courseCode = coursesLoadedFromFile.get(key.replace("_gmail", "_courseCode")); // return courseCode
+                    codes.add(courseCode);
+                }
+            }
+
+        }
+
+        return codes;
+    }
+
+
 
     public String getStoredStudentEmail_() {
         return storedStudentEmail_;

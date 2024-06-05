@@ -95,16 +95,27 @@ public class MyCoursesClass {
             System.out.println("The field can not be empty:");
             // main page or my courses
         }else {
-            String yes = "Yes".toLowerCase();
-            String no = "No".toLowerCase();
-            if (result.equals(yes)){
+            String yes = result.toLowerCase();
+            String no = result.toLowerCase();
+
+            if ("yes".equals(yes)){
                 String courseCode = JOptionPane.showInputDialog("Enter the course code");
                 // check before deleting that it is a string
-                deleteCourseByCourseCode(courseCode);
-            }else if (result.equals(no)){
+                if (courseCode == null) {// if the user presses cancel
+                    JOptionPane.showMessageDialog(null, "OKAY!");
+                    new HOME(this.userName, this.password).createHomePanel();
+                } else if (courseCode.isEmpty()){ // if the user presses enter without the courseCode
+                    JOptionPane.showMessageDialog(null, "Option not valid!");
+                    new HOME(this.userName, this.password).createHomePanel();
+                } else{
+                    deleteCourseByCourseCode(courseCode);
+                }
+
+            }else if ("no".equals(no)){
+                JOptionPane.showMessageDialog(null, "OKEY!");
                 new HOME(this.userName, this.password).createHomePanel();
             }else {
-                JOptionPane.showMessageDialog(null, "Option no valid!");
+                JOptionPane.showMessageDialog(null, "Option not valid!");
                 new HOME(this.userName, this.password).createHomePanel();
             }
         }

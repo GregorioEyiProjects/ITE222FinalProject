@@ -5,6 +5,6 @@
 {"gmail":"alex@gmail.com","courseCode":"ITE221"}
 {"gmail":"mroliverbmt@gmail.com","courseCode":"ITE103"}
 {"gmail":"gregorio@gmail.com","courseCode":"ITE222"}
-
 {"gmail":"anotherStudent@gmail.com","courseCode":"ITE321"}
-{"gmail":"gregorio@gmail.com","courseCode":"ITE120"}
+{"gmail":"gregorio@gmail.com","courseCode":"ITE221"}
+{"gmail":"matt@gmail.com","courseCode":"ITE222"}

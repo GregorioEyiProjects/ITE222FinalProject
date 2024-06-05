@@ -21,15 +21,6 @@ public class Student {
         this.studentCourses = new ArrayList<>();
     }
 
-/*    public Student(String username, String dateOfBirth, String email, String password, String courseToken) {
-        this.username = username;
-        DateOfBirth = dateOfBirth;
-        this.email = email;
-        this.password = password;
-        this.courseToken = courseToken;
-        this.enrolledCourses = new ArrayList<>();
-    }*/
-
     public void enroll(Course course){
         this.studentCourses.add(course);
     }
@@ -101,5 +92,12 @@ public class Student {
                 System.out.println(course.toString());
             }
         }
+    }
+
+    public String get_info4(String userName, String gmail, String dateOfBirth){
+        return "\n---------- Student info ----------" +"\n"+
+                "Username= '" + userName + "'\n" +
+                "Email= '" + gmail + "'\n" +
+                "Date of birth= '" + dateOfBirth + "'\n" ;
     }
 }

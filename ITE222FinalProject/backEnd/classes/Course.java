@@ -233,6 +233,19 @@ public class Course {
                 "price='" + price + "'\n";
     }
 
+    public String getCourse2(String name, String courseCode, String instructor, int hours, String topic, String publicationDate, int weeklyHours, double price) {
+        return "\n**************** COURSE INFO ****************" +"\n"+
+                "name= '" + name + "'\n" +
+                "courseCode= '" + courseCode + "'\n" +
+                "instructor= '" + instructor + "'\n" +
+                "hours=" + hours +"'\n"+
+                "topic='" + topic + "'\n" +
+                "publicationDate='" + publicationDate + "'\n" +
+                "weeklyHours='" + weeklyHours + "'\n"+
+                "price='" + price + "'\n";
+    }
+
+
     public void get_info() {
         System.out.println("Title: " + name + "\nInstructor: " + instructor + "\nDescription: " + topic +"\n");
     }

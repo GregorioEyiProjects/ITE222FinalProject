@@ -24,7 +24,6 @@ public class HOME {
             // try catch to catch the error and redirect the user to the same page unless the user selects the option 4
             int option = Integer.parseInt(JOptionPane.showInputDialog("1. My courses. \n2. Browse courses. \n3. View profile. \n\n4. Logout"));
 
-            System.out.println("What is this: "+ option);
             switch (option) {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Going to my 'MY COURSES'");

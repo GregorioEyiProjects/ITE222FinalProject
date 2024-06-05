@@ -15,8 +15,7 @@ public class UpdateOrDeleteStudentField {
     private HashMap<String, String> studentsListLoadedComing = new HashMap<>();
 
     public void updatingStudentFile(String studentEmail, String newStudentUserName, String newStudentPassword) throws IOException {
-        //reading the student file first and load it into a HashMap
-        gsif.readStudentFile();
+        gsif.readStudentFile();//reading the student file first and load it into a HashMap
         studentsListLoadedComing = gsif.getStudentsListLoaded();
         updateStudentField(studentsListLoadedComing, studentEmail, newStudentUserName, newStudentPassword);
     }
@@ -29,14 +28,9 @@ public class UpdateOrDeleteStudentField {
             String keyValue = entry.getValue();
 
             if (key.endsWith("_userName")){
-                //String storedUsername = keyValue;
                 String storedEmail = studentsListLoadedComing.get(key.replace("_userName", "_email"));
-                //String storedPassword = studentsListLoadedComing.get(key.replace("_userName", "_password"));
                 String storedDateOfBirth = studentsListLoadedComing.get(key.replace("_userName", "_dateOfBirth"));
                 if (storedEmail.equals(studentEmail)){
-                    //StudentFileModification sfm = new StudentFileModification();
-                    //sfm.addStudentToTheFile(newStudentUserName, storedEmail,  newStudentPassword,  storedDateOfBirth);
-                    //newStudentUserName, storedEmail,  newStudentPassword,  storedDateOfBirth
 
                     //Get the new line to be written
                     String updatedLine =

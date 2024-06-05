@@ -1,9 +1,6 @@
 package LogIn;
 
 import javax.swing.*;
-
-import HomePage.HomePage;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,9 +55,6 @@ public class loginWindow extends JFrame {
                 // Perform login authentication
                 if (authenticate(username, password)) {
                     JOptionPane.showMessageDialog(loginWindow.this, "Login successful!");
-                    setVisible(false);
-                    HomePage hp = new HomePage();
-                    hp.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(loginWindow.this, "Invalid username or password.");
                 }

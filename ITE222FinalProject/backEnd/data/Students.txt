@@ -1,4 +1,4 @@
-{"userName":"Gregorio", "email":"gregorio@gmail.com", "password":"password", "dateOfBirth":"11-03-2005"}
+{"userName":"Gregorio", "email":"gregorio@gmail.com", "password":"123456", "dateOfBirth":"11-03-2005"}
 {"password":"password","dateOfBirth":"11-03-2000","userName":"Matt","email":"matt@gmail.com"}
 {"password":"password","dateOfBirth":"11-03-2000","userName":"Marco","email":"marco@gmail.com"}
 {"userName":"MoStudent", "email":"testStudent@gmail.com", "password":"password", "dateOfBirth":"11-03-2000"}

@@ -1,10 +1,6 @@
 package ITE222FinalProject.backEnd;
 
 import ITE222FinalProject.FrontEndV2.login.Login;
-import ITE222FinalProject.backEnd.data.db.GetStudentInfoFromFile;
-import ITE222FinalProject.backEnd.data.db.StudentFileModification;
-import ITE222FinalProject.backEnd.data.db.StudentsCoursesFile;
-import ITE222FinalProject.backEnd.data.db.StudentsFileCreation;
 import ITE222FinalProject.frontEnd.login.LoginWindow;
 
 import java.io.IOException;
